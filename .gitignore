@@ -1,0 +1,13 @@
+.venv/
+.env
+__pycache__/
+*.pyc
+data/records.jsonl
+eval/results.json
+eval/eval_records.jsonl
+.pytest_cache/
+data/voicelogs/
+data/feedback.jsonl
+data/BUG_REPORT.md
+data/learned_patterns.json
+.DS_Store

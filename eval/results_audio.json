@@ -1,0 +1,506 @@
+{
+  "mode": "audio",
+  "snr": 5.0,
+  "summary": {
+    "field_accuracy": 0.964,
+    "fields": "27/28",
+    "danger_recall": 1.0,
+    "danger_missed": 0,
+    "danger_false_alarms": 1,
+    "saves_correct": "8/8",
+    "danger_penalty": 1
+  },
+  "results": [
+    {
+      "id": "newborn-hinglish-correction",
+      "lang": "hi-IN",
+      "fields": {
+        "beneficiary_id": {
+          "want": "1004",
+          "got": "1004",
+          "ok": true
+        },
+        "visit_type": {
+          "want": "HBNC",
+          "got": "HBNC",
+          "ok": true
+        },
+        "weight_kg": {
+          "want": 2.8,
+          "got": 2.8,
+          "ok": true
+        },
+        "temperature_f": {
+          "want": 98.4,
+          "got": 88.4,
+          "ok": false
+        }
+      },
+      "danger_expected": 0,
+      "danger_missed": [],
+      "danger_extra": [
+        "NB_COLD"
+      ],
+      "saved_ok": true,
+      "heard": [
+        {
+          "said": "Pooja Yadav ke bachche ka HBNC visit, ID एक शून्य शून्य चार",
+          "heard": "पूजा यादव के बच्चे का HBNC visit ID 1004।",
+          "stt_ms": 2054
+        },
+        {
+          "said": "बच्चे का weight ढाई किलो है, temperature अट्ठानवे point चार",
+          "heard": "बच्चे का weight 2.5 kg है। temperature 88.4।",
+          "stt_ms": 2030
+        },
+        {
+          "said": "नहीं नहीं, weight दो point आठ किलो है",
+          "heard": "नहीं नहीं, weight 2.8 kg है।",
+          "stt_ms": 2067
+        },
+        {
+          "said": "बस हो गया, save करो",
+          "heard": "बस हो गया, save करो।",
+          "stt_ms": 2034
+        },
+        {
+          "said": "हाँ सही है",
+          "heard": "हाँ, सही है।",
+          "stt_ms": 2037
+        }
+      ],
+      "agent": [
+        "ठीक है दीदी, पूजा यादव के बच्चे का HBNC visit ID 1004 सेट कर दिया।",
+        "ध्यान दीजिए: बच्चे का शरीर ठंडा. यह खतरे का संकेत है. अभी PHC रेफ़र कीजिए. मैंने रिकॉर्ड पर निशान लगा दिया है.",
+        "बच्चे का वजन 2.5 kg और तापमान 88.4 °F सेट कर दिया, दीदी।",
+        "वजन 2.8 kg कर दिया, दीदी।",
+        "रिकॉर्ड: Baby of Pooja Yadav, ID 1004, HBNC visit, वजन 2.8 kg, तापमान 88.4 °F (बच्चा ठंडा है), अगला विज़िट 24 नवंबर 2026.",
+        "सब सही है?",
+        "बच्चे में ठंड है, कृपया तुरंत एएनएम या पीएचसी को रेफ़र करें।",
+        "सहेजा गया, अगला विज़िट 24 नवंबर 2026 है।"
+      ],
+      "llm_first_reply_ms": [
+        2204,
+        762,
+        757,
+        1707,
+        910
+      ]
+    },
+    {
+      "id": "anc-bleeding-hindi",
+      "lang": "hi-IN",
+      "fields": {
+        "beneficiary_id": {
+          "want": "1001",
+          "got": "1001",
+          "ok": true
+        },
+        "visit_type": {
+          "want": "ANC",
+          "got": "ANC",
+          "ok": true
+        },
+        "weight_kg": {
+          "want": 58,
+          "got": 58.0,
+          "ok": true
+        },
+        "bp_systolic": {
+          "want": 120,
+          "got": 120,
+          "ok": true
+        },
+        "bp_diastolic": {
+          "want": 80,
+          "got": 80,
+          "ok": true
+        },
+        "vaccinations_given_today": {
+          "want": [
+            "Td-2"
+          ],
+          "got": [
+            "Td-2"
+          ],
+          "ok": true
+        },
+        "next_visit_date": {
+          "want": "+15",
+          "got": "2026-12-02",
+          "ok": true
+        }
+      },
+      "danger_expected": 1,
+      "danger_missed": [],
+      "danger_extra": [],
+      "saved_ok": true,
+      "heard": [
+        {
+          "said": "सुनीता देवी, एक शून्य शून्य एक, ANC checkup किया",
+          "heard": "सुनीता देवी, एक 001 ANC checkup किया।",
+          "stt_ms": 2064
+        },
+        {
+          "said": "वज़न अट्ठावन किलो, BP एक सौ बीस बटा अस्सी, TT injection का दूसरा डोज़ लगा दिया",
+          "heard": "वज़न 58 kg, BP 120/80, TT injection का दूसरा dose लगा दिया।",
+          "stt_ms": 2036
+        },
+        {
+          "said": "कल रात से थोड़ी bleeding हो रही है ऐसा बोल रही है",
+          "heard": "कल रात से थोड़ी bleeding हो रही है, ऐसा बोल रही है।",
+          "stt_ms": 2030
+        },
+        {
+          "said": "अगली visit पंद्रह दिन बाद",
+          "heard": "अगली विज़िट 15 दिन बाद।",
+          "stt_ms": 2029
+        }
+      ],
+      "agent": [
+        "सुनीता देवी, ID 1 0 0 1, ANC visit set, ठीक है दीदी?",
+        "वज़न 58 kg, BP 120/80, TT दूसरा डोज़ (Td-2) दिया, ठीक है दीदी?",
+        "ध्यान दीजिए: गर्भावस्था में या प्रसव के बाद ज़्यादा खून आना. यह खतरे का संकेत है. अभी PHC रेफ़र कीजिए. मैंने रिकॉर्ड पर निशान लगा दिया है.",
+        "कृपया तुरंत निकटतम PHC या ANM से संपर्क करें, ठीक है दीदी?",
+        "सुनीता देवी, ID 1 0 0 1, गर्भवती, ANC विज़िट, वज़न 58 kg, BP 120/80, TT दूसरा डोज़ (Td-2), bleeding रिपोर्ट हुआ, अगली विज़िट 15 दिन बाद यानी 02 दिसंबर 2026, ठीक है दीदी?",
+        "sab sahi hai?"
+      ],
+      "llm_first_reply_ms": [
+        1161,
+        746,
+        3,
+        902
+      ]
+    },
+    {
+      "id": "newborn-fever-not-feeding",
+      "lang": "hi-IN",
+      "fields": {
+        "beneficiary_id": {
+          "want": "1009",
+          "got": "1009",
+          "ok": true
+        },
+        "weight_kg": {
+          "want": 2.1,
+          "got": 2.1,
+          "ok": true
+        }
+      },
+      "danger_expected": 2,
+      "danger_missed": [],
+      "danger_extra": [],
+      "saved_ok": true,
+      "heard": [
+        {
+          "said": "Fatima Bano ka baby, ID 1009",
+          "heard": "फातिमा बानो का baby ID 1009।",
+          "stt_ms": 2042
+        },
+        {
+          "said": "baby ko tez bukhar hai aur doodh bhi nahi pee raha, weight 2 kilo 100 gram",
+          "heard": "baby को तेज़ बुखार है और दूध भी नहीं पी रहा। weight 2 kg 100 g।",
+          "stt_ms": 2065
+        }
+      ],
+      "agent": [
+        "ठीक है दीदी, ID 1009 सेट कर दिया।",
+        "ध्यान दीजिए: नवजात को बुखार, बच्चा दूध नहीं पी रहा. यह खतरे का संकेत है. अभी PHC रेफ़र कीजिए. मैंने रिकॉर्ड पर निशान लगा दिया है.",
+        "भाई दीदी, वजन 2.1 किलो सेट कर दिया।"
+      ],
+      "llm_first_reply_ms": [
+        622,
+        3
+      ]
+    },
+    {
+      "id": "negated-signs-no-flag",
+      "lang": "hi-IN",
+      "fields": {
+        "beneficiary_id": {
+          "want": "1002",
+          "got": "1002",
+          "ok": true
+        },
+        "weight_kg": {
+          "want": 52,
+          "got": 52.0,
+          "ok": true
+        },
+        "ifa_tablets_given": {
+          "want": 30,
+          "got": 30,
+          "ok": true
+        }
+      },
+      "danger_expected": 0,
+      "danger_missed": [],
+      "danger_extra": [],
+      "saved_ok": true,
+      "heard": [
+        {
+          "said": "Rekha Kumari 1002, pehla ANC visit",
+          "heard": "रेखा कुमारी, 1002, पहला ANC visit।",
+          "stt_ms": 2085
+        },
+        {
+          "said": "koi bleeding nahi, bukhar nahi, sujan bhi nahi hai. Weight 52 kilo, IFA goli 30 di",
+          "heard": "कोई bleeding नहीं, बुखार नहीं, सूजन भी नहीं है। weight 52 kg, IFA goli 30 day।",
+          "stt_ms": 2123
+        }
+      ],
+      "agent": [
+        "Rekha Kumari, ID 1 0 0 2, ANC visit noted, ठीक है?",
+        "Weight 52 kg, IFA 30 days diya, ठीक है?"
+      ],
+      "llm_first_reply_ms": [
+        558,
+        601
+      ]
+    },
+    {
+      "id": "high-bp-english",
+      "lang": "en-IN",
+      "fields": {
+        "beneficiary_id": {
+          "want": "1006",
+          "got": "1006",
+          "ok": true
+        },
+        "bp_systolic": {
+          "want": 150,
+          "got": 150,
+          "ok": true
+        },
+        "bp_diastolic": {
+          "want": 96,
+          "got": 96,
+          "ok": true
+        },
+        "weight_kg": {
+          "want": 61,
+          "got": 61.0,
+          "ok": true
+        }
+      },
+      "danger_expected": 2,
+      "danger_missed": [],
+      "danger_extra": [],
+      "saved_ok": true,
+      "heard": [
+        {
+          "said": "ANC visit for Meena Kumari, ID 1006",
+          "heard": "AMC visit for Meena Kumari, ID 1006.",
+          "stt_ms": 2045
+        },
+        {
+          "said": "BP is 150 by 96, weight 61 kilo, she has swelling on her face",
+          "heard": "BP is 150 by 96, weight 61 kilo. She has swelling on her face.",
+          "stt_ms": 2035
+        },
+        {
+          "said": "done, please save",
+          "heard": "Done, please save.",
+          "stt_ms": 2190
+        },
+        {
+          "said": "yes correct",
+          "heard": "Yes, correct.",
+          "stt_ms": 2269
+        }
+      ],
+      "agent": [
+        "Got it, Meena Kumari, ID 1 0 0 6, ANC visit.",
+        "Sab sahi hai?",
+        "Attention: swelling of face or hands. This is a danger sign. Please refer to the PHC now. I have flagged this record.",
+        "Attention: high blood pressure, 140 by 90 or more. This is a danger sign. Please refer to the PHC now. I have flagged this record.",
+        "BP 150/96, weight 61 kg noted, swelling noted.",
+        "Sab sahi hai?",
+        "Record: Meena Kumari, ID 1 0 0 6, pregnant, ANC visit on 17 November 2026.",
+        "Weight 61 kg, BP 150/96, swelling of face or hands.",
+        "Danger signs: high blood pressure, swelling of face or hands.",
+        "Vaccines due: Td‑1.",
+        "Suggested next visit: 17 December 2026.",
+        "Referral to PHC required.",
+        "Sab sahi hai?",
+        "Saved, Didi.",
+        "Referral to PHC for high BP and swelling.",
+        "Next visit due 17 December 2026.",
+        "Vaccination due: Td‑1."
+      ],
+      "llm_first_reply_ms": [
+        1310,
+        4,
+        743,
+        626
+      ]
+    },
+    {
+      "id": "child-immunisation",
+      "lang": "hi-IN",
+      "fields": {
+        "beneficiary_id": {
+          "want": "2001",
+          "got": "2001",
+          "ok": true
+        },
+        "visit_type": {
+          "want": "Immunisation",
+          "got": "Immunisation",
+          "ok": true
+        },
+        "weight_kg": {
+          "want": 4.6,
+          "got": 4.6,
+          "ok": true
+        },
+        "vaccinations_given_today": {
+          "want": [
+            "Penta-1",
+            "OPV-1",
+            "RVV-1",
+            "PCV-1",
+            "fIPV-1"
+          ],
+          "got": [
+            "Penta-1",
+            "OPV-1",
+            "RVV-1",
+            "PCV-1",
+            "fIPV-1"
+          ],
+          "ok": true
+        },
+        "next_visit_date": {
+          "want": "+28",
+          "got": "2026-12-15",
+          "ok": true
+        }
+      },
+      "danger_expected": 0,
+      "danger_missed": [],
+      "danger_extra": [],
+      "saved_ok": true,
+      "heard": [
+        {
+          "said": "आरव सिंह, दो शून्य शून्य एक, टीकाकरण",
+          "heard": "आरव सिंह, 2001 टीका करें।",
+          "stt_ms": 2351
+        },
+        {
+          "said": "आज penta एक, OPV एक, rota एक, PCV एक और IPV लगा दिया, वज़न चार दशमलव छह किलो",
+          "heard": "आज Penta 1, OPV 1, Rota 1, PCV 1 और IPV लगा दिया। वज़न 4.6 kg।",
+          "stt_ms": 2203
+        },
+        {
+          "said": "अगली visit चार हफ़्ते बाद",
+          "heard": "अगली विज़िट 4 हफ्ते बाद।",
+          "stt_ms": 2152
+        },
+        {
+          "said": "बस",
+          "heard": "बस।",
+          "stt_ms": 2259
+        },
+        {
+          "said": "हाँ",
+          "heard": "हाँ।",
+          "stt_ms": 2139
+        }
+      ],
+      "agent": [
+        "ठीक है दीदी, Aarav Singh (2001) का इम्यूनाइजेशन रिकॉर्ड कर रहा हूँ।",
+        "ठीक है दीदी, Penta‑1, OPV‑1, RVV‑1, PCV‑1 और fIPV‑1 दिया, वज़न 4.6 किलो।",
+        "ठीक है दीदी, अगली विज़िट 4 हफ़्ते बाद, 15 दिसंबर को सेट कर रहा हूँ।",
+        "सारांश: Aarav Singh (2001), बच्चा, इम्यूनाइजेशन, वज़न 4.6 किलो, आज Penta‑1, OPV‑1, RVV‑1, PCV‑1, fIPV‑1 दिया गया, अगली विज़िट 15 दिसंबर.",
+        "सब सही है?",
+        "रिकॉर्ड सेव हो गया, दीदी।",
+        "अगले दो हफ़्ते में Penta‑2 और OPV‑2 देना है, अगली विज़िट 15 दिसंबर को।"
+      ],
+      "llm_first_reply_ms": [
+        740,
+        1008,
+        548,
+        1099,
+        729
+      ]
+    },
+    {
+      "id": "fits-marathi",
+      "lang": "mr-IN",
+      "fields": {
+        "beneficiary_id": {
+          "want": "1005",
+          "got": "1005",
+          "ok": true
+        }
+      },
+      "danger_expected": 2,
+      "danger_missed": [],
+      "danger_extra": [],
+      "saved_ok": true,
+      "heard": [
+        {
+          "said": "अंजली वर्मा, एक शून्य शून्य पाच",
+          "heard": "अंजली वर्मा, 1005।",
+          "stt_ms": 2125
+        },
+        {
+          "said": "तिला आज सकाळी झटके आले, आणि डोकं खूप दुखतंय",
+          "heard": "तिला आज सकाळी झटके आले आणि डोकं खूप दुखतं आहे.",
+          "stt_ms": 2074
+        }
+      ],
+      "agent": [
+        "ठीक आहे, दीदी, अंजली वर्मा, 1005 नोंदवले.",
+        "लक्ष द्या: दौरे या झटके आना, तेज़ सिरदर्द या धुंधला दिखना. हे धोक्याचे लक्षण आहे. आत्ताच PHC ला रेफर करा. मी रेकॉर्डवर खूण केली आहे.",
+        "झटके आणि डोकं खूप दुखणं नोंदवले, दीदी."
+      ],
+      "llm_first_reply_ms": [
+        1157,
+        3
+      ]
+    },
+    {
+      "id": "telugu-fever-pregnant",
+      "lang": "te-IN",
+      "fields": {
+        "beneficiary_id": {
+          "want": "1007",
+          "got": "1007",
+          "ok": true
+        },
+        "weight_kg": {
+          "want": 62,
+          "got": 62.0,
+          "ok": true
+        }
+      },
+      "danger_expected": 1,
+      "danger_missed": [],
+      "danger_extra": [],
+      "saved_ok": true,
+      "heard": [
+        {
+          "said": "లక్ష్మి నాయుడు, ఐడి వన్ జీరో జీరో సెవెన్",
+          "heard": "Lakshminayudu ID 1007.",
+          "stt_ms": 2046
+        },
+        {
+          "said": "ఆమెకు రెండు రోజులుగా ఎక్కువ జ్వరం ఉంది, బరువు అరవై రెండు కిలోలు",
+          "heard": "ఆమెకు 2 రోజులుగా ఎక్కువ జ్వరం ఉంది. బరువు 62 kg.",
+          "stt_ms": 2050
+        }
+      ],
+      "agent": [
+        "బాగుంది, Lakshmi Naidu ID 1007 తీసుకున్నాను, దిద్దాలి?",
+        "గమనించండి: high fever. ఇది ప్రమాద సంకేతం. వెంటనే PHC కి రిఫర్ చేయండి. రికార్డులో గుర్తు పెట్టాను.",
+        "బరువు 62 కిలోగ్రామ్స్ గా నమోదు చేసాను, సరి?"
+      ],
+      "llm_first_reply_ms": [
+        1894,
+        4
+      ]
+    }
+  ]
+}

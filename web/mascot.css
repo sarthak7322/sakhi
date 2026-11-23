@@ -1,0 +1,71 @@
+/* Sakhi mascot: states and moods are classes on the host element (see mascot.js) */
+.mascot-host { position: relative; display: block; aspect-ratio: 1; }
+.mascot { width: 100%; height: 100%; display: block; overflow: visible; }
+.mascot * { transform-box: fill-box; transform-origin: center; }
+.m-all { transform-box: view-box; transform-origin: 80px 160px; animation: m-breathe 3.8s ease-in-out infinite; }
+.m-head { transform-box: view-box; transform-origin: 80px 100px; transition: transform .45s var(--ease, ease); }
+.m-eyes, .m-brow, .m-cheek { transition: transform .35s var(--ease, ease), opacity .2s; }
+.m-iris { transition: transform .35s var(--ease, ease); }
+.m-eye { animation: m-blink 5.4s infinite; }
+.m-eye-r { animation-delay: .05s; }
+.m-mic { transition: fill .3s, filter .3s; }
+.m-teeth, .m-tongue { transition: opacity .08s; }
+/* overlays hidden by default */
+.m-eyes-happy, .m-eyes-closed, .m-hand, .m-chin, .m-dots, .m-micoff, .m-sweat, .m-spark, .m-zz, .m-frown, .m-grin, .m-o { opacity: 0; transition: opacity .25s; }
+@keyframes m-breathe { 50% { transform: translateY(1.4px) scale(1.008); } }
+@keyframes m-blink { 0%, 93%, 100% { transform: scaleY(1); } 95.5% { transform: scaleY(.06); } }
+
+/* listening: mic lit, relaxed smile */
+.m-listening .m-mic, .m-hearing .m-mic { fill: #9df0d6; filter: drop-shadow(0 0 3px #86d9c2); animation: m-mic 1.6s ease-in-out infinite; }
+@keyframes m-mic { 50% { filter: drop-shadow(0 0 6px #86d9c2); } }
+/* hearing: leans in, brows up, eyes wide, little "o" */
+.m-hearing .m-head { transform: rotate(-7deg) translateY(1px); }
+.m-hearing .m-eye { animation: none; transform: scale(1.12); }
+.m-hearing .m-brow { transform: translateY(-3px); }
+.m-hearing .m-mouth-g { opacity: 0; } .m-hearing .m-o { opacity: 1; transform: scale(.75); }
+/* thinking: looks up-right, hand on chin, dots */
+.m-thinking .m-iris { transform: translate(2.5px, -3px) !important; }
+.m-thinking .m-head { transform: rotate(5deg); }
+.m-thinking .m-brow-r { transform: translateY(-3px) rotate(-6deg); }
+.m-thinking .m-chin, .m-thinking .m-dots { opacity: 1; }
+.m-dots circle { fill: var(--ink-2, #b9b5ae); animation: m-dot 1s ease-in-out infinite; }
+.m-dots circle:nth-child(2) { animation-delay: .15s; } .m-dots circle:nth-child(3) { animation-delay: .3s; }
+@keyframes m-dot { 0%, 100% { transform: translateY(0); opacity: .35; } 50% { transform: translateY(-4px); opacity: 1; } }
+/* speaking: head moves with the sentence; mouth is driven by the real audio level */
+.m-speaking .m-head { animation: m-talk .45s ease-in-out infinite alternate; }
+.m-speaking .m-brow { animation: m-browtalk 1.8s ease-in-out infinite; }
+@keyframes m-talk { from { transform: rotate(-1.5deg); } to { transform: rotate(1.5deg) translateY(-1px); } }
+@keyframes m-browtalk { 0%, 60%, 100% { transform: translateY(0); } 70% { transform: translateY(-2.5px); } }
+/* waving hello */
+.m-waving .m-hand { opacity: 1; animation: m-wave .5s ease-in-out infinite alternate; transform-box: view-box; transform-origin: 128px 160px; }
+.m-waving .m-mouth-g { opacity: 0; } .m-waving .m-grin { opacity: 1; }
+@keyframes m-wave { from { transform: rotate(-10deg); } to { transform: rotate(12deg); } }
+/* worried: danger sign */
+.m-worried .m-brow-l { transform: rotate(-20deg) translateY(-2px); }
+.m-worried .m-brow-r { transform: rotate(20deg) translateY(-2px); }
+.m-worried .m-mouth-g { opacity: 0; } .m-worried .m-frown, .m-worried .m-sweat { opacity: 1; }
+.m-worried .m-sweat { animation: m-drip 1.6s ease-in infinite; }
+.m-worried .mascot { filter: drop-shadow(0 0 12px rgba(242, 109, 130, .8)); }
+.m-worried .m-all { animation: m-shake .45s 2, m-breathe 3.8s ease-in-out .9s infinite; }
+@keyframes m-shake { 25% { transform: translateX(-2.5px); } 75% { transform: translateX(2.5px); } }
+@keyframes m-drip { 0% { transform: translateY(-2px); opacity: 0; } 30% { opacity: 1; } 100% { transform: translateY(6px); opacity: 0; } }
+/* happy: saved */
+.m-happy .m-eyes { opacity: 0; } .m-happy .m-eyes-happy, .m-happy .m-spark, .m-happy .m-grin { opacity: 1; }
+.m-happy .m-mouth-g { opacity: 0; }
+.m-happy .m-cheek { transform: scale(1.25); opacity: .55; }
+.m-happy .m-head { transform: rotate(-4deg) translateY(-1px); }
+.m-happy .m-spark path { animation: m-twinkle 1.1s ease-in-out infinite; } .m-happy .m-spark path:nth-child(2) { animation-delay: .4s; }
+@keyframes m-twinkle { 50% { transform: scale(.55) rotate(25deg); } }
+/* sleep (connecting) / waking / muted */
+.m-sleep .m-eyes, .m-muted .m-eyes { opacity: 0; }
+.m-sleep .m-eyes-closed, .m-muted .m-eyes-closed, .m-sleep .m-zz { opacity: 1; }
+.m-sleep .m-head { transform: rotate(9deg) translateY(2px); }
+.m-sleep .m-zz text { animation: m-dot 1.8s ease-in-out infinite; } .m-sleep .m-zz text:nth-child(2) { animation-delay: .5s; }
+.m-muted .m-micoff { opacity: 1; } .m-muted .m-mic { fill: #6b7378; }
+.m-waking .m-eye { animation: m-wake 1s var(--ease, ease) both; }
+@keyframes m-wake { 0%, 40% { transform: scaleY(.05); } 60% { transform: scaleY(1); } 75% { transform: scaleY(.1); } 100% { transform: scaleY(1); } }
+@media (prefers-reduced-motion: reduce) { .mascot *, .m-all { animation: none !important; } }
+
+/* while she is speaking the talking mouth always wins over moods (greeting wave, worried danger message) */
+.m-speaking .m-mouth-g { opacity: 1 !important; }
+.m-speaking .m-frown, .m-speaking .m-grin, .m-speaking .m-o { opacity: 0 !important; }

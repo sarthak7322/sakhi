@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0b0c">
+  <title>Sakhi · Voice register for ASHA workers</title>
+  <meta name="description" content="Sakhi turns an ASHA worker's spoken home-visit notes into a structured record, reads it back, and escalates danger signs to the PHC in real time. Hindi, English and 8 more Indian languages.">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="/static/icon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@500;600&family=Inter+Tight:wght@600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="/static/theme.css">
+  <link rel="stylesheet" href="/static/mascot.css">
+  <link rel="stylesheet" href="/static/landing.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-in">
+      <a class="logo" href="/"><img src="/static/icon.svg" alt="" width="28" height="28"><b>Sakhi</b><span class="mono">सखी</span></a>
+      <nav class="nav-links">
+        <a href="#how">How it works</a><a href="#try">Try it</a><a href="#safety">Safety</a><a href="#speed">Speed</a><a href="#faq">FAQ</a>
+      </nav>
+      <div class="nav-cta">
+        <button class="ghost-btn icon" id="themeBtn" title="Light / dark">◐</button>
+        <a class="btn-primary sm" href="/app">Open app <span>→</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero wrap">
+      <div class="hero-copy">
+        <div class="hero-row"><div class="hero-m m-waving" data-mascot></div>
+        <p class="eyebrow mono"><i class="dot"></i> BolBharat · Gnani Voice AI Challenge · Healthcare</p></div>
+        <h1>Speak the visit.<br><em>The register fills itself.</em></h1>
+        <p class="lede">Sakhi is a voice assistant for ASHA workers. She listens to home-visit notes in Hindi, English and
+          8 more Indian languages, fills the record, reads it back for a spoken “हाँ”, and flags danger signs to the PHC
+          the moment they are said.</p>
+        <div class="hero-ctas">
+          <a class="btn-primary" href="/app">🎙️ Start a visit <span>→</span></a>
+          <a class="ghost-btn" href="/app?demo=1">▶ Watch a demo visit</a>
+        </div>
+        <ul class="hero-proof">
+          <li><b>~0.2 s</b><span>first reply on routine lines</span></li>
+          <li><b>0–1</b><span>AI calls per visit</span></li>
+          <li><b>100%</b><span>danger-sign recall in eval</span></li>
+        </ul>
+      </div>
+
+      <div class="phone" aria-label="Sakhi demo preview">
+        <div class="phone-top"><div class="pm" id="pMascot" data-mascot></div><span class="mono">Sakhi</span><span class="live"><i></i>live</span><span class="mono lat" id="pLat">⏱ 190 ms</span></div>
+        <div class="phone-chat" id="pChat"></div>
+        <div class="phone-card" id="pCard">
+          <div class="pc-head"><div class="pc-av">SD</div><div><b>Sunita Devi</b><small>pregnant · Rampur · 30 wk</small></div><span class="mono pc-id">ID 1001</span></div>
+          <div class="pc-grid">
+            <div data-f="visit"><small>Visit</small><b>—</b></div><div data-f="weight"><small>Weight</small><b>—</b></div>
+            <div data-f="bp"><small>BP</small><b>—</b></div><div data-f="hb"><small>Hb</small><b>—</b></div>
+          </div>
+        </div>
+        <div class="phone-alarm" id="pAlarm" hidden>🚨 <b>Danger sign — refer to PHC now</b><small>severe headache or blurred vision</small></div>
+      </div>
+    </section>
+
+    <!-- TICKER -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-in">
+        <span>हिन्दी</span><span>English</span><span>मराठी</span><span>বাংলা</span><span>ગુજરાતી</span><span>ਪੰਜਾਬੀ</span>
+        <span>தமிழ்</span><span>తెలుగు</span><span>ಕನ್ನಡ</span><span>മലയാളം</span><span class="mono">Gnani Prisma v3.0 STT</span>
+        <span class="mono">Timbre v3.0 TTS</span><span class="mono">streaming WebSockets</span><span class="mono">barge-in</span>
+        <span>हिन्दी</span><span>English</span><span>मराठी</span><span>বাংলা</span><span>ગુજરાતી</span><span>ਪੰਜਾਬੀ</span>
+        <span>தமிழ்</span><span>తెలుగు</span><span>ಕನ್ನಡ</span><span>മലയാളം</span><span class="mono">Gnani Prisma v3.0 STT</span>
+        <span class="mono">Timbre v3.0 TTS</span><span class="mono">streaming WebSockets</span><span class="mono">barge-in</span>
+      </div>
+    </div>
+
+    <!-- HOW -->
+    <section class="wrap section" id="how">
+      <p class="label mono">How it works</p>
+      <h2>Four sentences. <em>One complete record.</em></h2>
+      <p class="sub">No forms, no typing, no screen-staring while walking between houses.</p>
+      <ol class="steps">
+        <li><span class="num mono">01</span><h3>Say who</h3><p>“सुनीता देवी, ID 1001, ANC visit” — the register fills her name, weeks of pregnancy and vaccines due.</p></li>
+        <li><span class="num mono">02</span><h3>Say the readings</h3><p>“वज़न 58 किलो, BP 120 by 80, Hb 10.5” — every value confirmed out loud, odd ones questioned.</p></li>
+        <li><span class="num mono">03</span><h3>Hear it back</h3><p>“बस, save करो” — Sakhi reads the whole record back. Change anything by just saying it.</p></li>
+        <li><span class="num mono">04</span><h3>Saved, with next steps</h3><p>“हाँ सही है” — saved with follow-ups: PHC referral, vaccines due, the next home visit.</p></li>
+      </ol>
+    </section>
+
+    <!-- TRY -->
+    <section class="wrap section" id="try">
+      <p class="label mono">Try it · on-device understanding</p>
+      <h2>Type what an ASHA would say. <em>See it understood.</em></h2>
+      <p class="sub">Routine lines are understood by Sakhi's local model in milliseconds with no AI call. Danger signs and questions go to the AI as well.</p>
+      <div class="try card">
+        <form id="tryForm" class="try-row">
+          <input id="tryIn" autocomplete="off" value="वज़न 58 किलो, BP 120 by 80 और Hb 10.5">
+          <button class="btn-primary sm">Understand →</button>
+        </form>
+        <div class="chips" id="tryChips">
+          <button>ID है 1007, ANC visit</button><button>तापमान 97 degree Fahrenheit, साँस 12 per minute</button>
+          <button>IFA की गोली नहीं ली और टीका भी नहीं है</button><button>agli visit 15 din baad</button>
+          <button>बच्चा दूध नहीं पी रहा</button><button>ANC क्या होता है?</button>
+        </div>
+        <div class="try-out" id="tryOut"></div>
+      </div>
+    </section>
+
+    <!-- SAFETY -->
+    <section class="wrap section split" id="safety">
+      <div>
+        <p class="label mono">Safety first</p>
+        <h2>A danger sign is never <em>just a note.</em></h2>
+        <p class="sub">Bleeding, fits, a baby not feeding, fast breathing, BP 140/90 or more — the moment it is said, Sakhi
+          speaks a fixed “refer to PHC now” message, flags the record and puts it at the top of the follow-up list.</p>
+        <ul class="ticks">
+          <li>Three detectors in parallel: keywords (with negation), measured numbers, and the AI</li>
+          <li>Signs cited from the MCP card, HBNC and IMNCI guidelines</li>
+          <li>Never diagnoses, never suggests a medicine or dose</li>
+          <li>Nothing is saved until the record is read back and she says “हाँ”</li>
+          <li>Synthetic beneficiaries only · audio is never stored</li>
+        </ul>
+      </div>
+      <div class="alarm-demo card">
+        <div class="ad-icon">🚨</div>
+        <b>खतरे का संकेत · Danger sign</b>
+        <p>अभी PHC रेफ़र करें · Refer to PHC now</p>
+        <div class="ad-sign">तेज़ सिरदर्द या धुंधला दिखना<small>heard: “BP 150 by 100 है और तेज़ सिर दर्द” · MCP card</small></div>
+        <div class="ad-sign">बीपी 140/90 या ज़्यादा<small>measured: BP 150/100 · MCP card</small></div>
+      </div>
+    </section>
+
+    <!-- SPEED -->
+    <section class="wrap section" id="speed">
+      <p class="label mono">Built for the field</p>
+      <h2>Fast on a cheap phone. <em>Calm in a noisy street.</em></h2>
+      <div class="bento">
+        <div class="card b1"><b class="big">~0.2 s</b><p>to the first word of a reply on routine lines — understood locally, then streamed by Timbre.</p></div>
+        <div class="card b2"><b class="big">96%</b><p>of routine sentences in our held-out tests understood with no AI call, and every one of them exactly right.</p></div>
+        <div class="card b3"><b class="big">Barge-in</b><p>Talk over Sakhi any time: she pauses, listens, and only stops if it was really you, not a passing horn.</p></div>
+        <div class="card b4"><b class="big">5 dB</b><p>street-noise SNR in testing: a one-word “हाँ” still heard, every danger sign still caught.</p></div>
+        <div class="card b5"><b class="big">10</b><p>languages, with English health words (BP, Hb, ANC, IFA) kept as she says them.</p></div>
+        <div class="card b6"><b class="big">Learns</b><p>new phrasings from the AI after two identical answers — then handles them locally forever.</p></div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="wrap section narrow" id="faq">
+      <p class="label mono">FAQ</p>
+      <h2>Questions, <em>answered.</em></h2>
+      <details><summary>Is any real patient data used?</summary><p>No. The register holds synthetic beneficiaries only. Audio is streamed for transcription and never stored; a text-only voice log is kept for review.</p></details>
+      <details><summary>Does Sakhi give medical advice?</summary><p>Never. She fills the register. For danger signs she says one fixed line — refer to the PHC now — and for medical questions she asks the ASHA to consult the ANM or PHC doctor.</p></details>
+      <details><summary>What if she mishears a number?</summary><p>Every value is repeated back as it is captured, unusual values (a 28 kg newborn, BP 80/120) are questioned, and the whole record is read back before saving. Any field can also be corrected by tapping it.</p></details>
+      <details><summary>Which languages work?</summary><p>Hindi, English, Marathi, Bengali, Gujarati, Punjabi, Tamil, Telugu, Kannada and Malayalam, with Indic–English code-mixing. The fastest local understanding currently covers Hindi, Hinglish and English.</p></details>
+      <details><summary>What happens when the internet or AI is slow?</summary><p>Routine dictation is understood locally, so most of a visit needs no AI call at all. If the AI is unavailable, Sakhi keeps every value she understood and asks for one thing at a time.</p></details>
+      <details><summary>How do I try it?</summary><p>Open the app, pick a language, allow the microphone and start talking — or press ▶ Demo to hear a scripted visit.</p></details>
+    </section>
+
+    <!-- CTA -->
+    <section class="wrap cta card">
+      <h2>Ready when <em>she is.</em></h2>
+      <p class="sub">Open Sakhi on any phone browser. No install, no login.</p>
+      <div class="hero-ctas center"><a class="btn-primary" href="/app">🎙️ Start a visit <span>→</span></a><a class="ghost-btn" href="/app?demo=1">▶ Demo visit</a></div>
+    </section>
+  </main>
+
+  <footer class="foot wrap">
+    <div><a class="logo" href="/"><img src="/static/icon.svg" alt="" width="22" height="22"><b>Sakhi</b></a>
+      <p class="mono small">Prototype for the BolBharat – Gnani Voice AI Innovation Challenge (PS1 Healthcare). Synthetic data only. Not a medical device.</p></div>
+    <nav><a href="/app">App</a><a href="#how">How it works</a><a href="#safety">Safety</a><a href="#faq">FAQ</a></nav>
+  </footer>
+  <script src="/static/mascot.js"></script>
+  <script src="/static/landing.js"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+[
+  {
+    "id": "newborn-hinglish-correction",
+    "lang": "hi-IN",
+    "turns": [
+      "Pooja Yadav ke bachche ka HBNC visit, ID एक शून्य शून्य चार",
+      "बच्चे का weight ढाई किलो है, temperature अट्ठानवे point चार",
+      "नहीं नहीं, weight दो point आठ किलो है",
+      "बस हो गया, save करो",
+      "हाँ सही है"
+    ],
+    "expect": {"beneficiary_id": "1004", "visit_type": "HBNC", "weight_kg": 2.8, "temperature_f": 98.4},
+    "expect_danger": [],
+    "expect_saved": true
+  },
+  {
+    "id": "anc-bleeding-hindi",
+    "lang": "hi-IN",
+    "turns": [
+      "सुनीता देवी, एक शून्य शून्य एक, ANC checkup किया",
+      "वज़न अट्ठावन किलो, BP एक सौ बीस बटा अस्सी, TT injection का दूसरा डोज़ लगा दिया",
+      "कल रात से थोड़ी bleeding हो रही है ऐसा बोल रही है",
+      "अगली visit पंद्रह दिन बाद"
+    ],
+    "expect": {"beneficiary_id": "1001", "visit_type": "ANC", "weight_kg": 58, "bp_systolic": 120, "bp_diastolic": 80,
+               "vaccinations_given_today": ["Td-2"], "next_visit_date": "+15"},
+    "expect_danger": ["MAT_BLEEDING"],
+    "expect_saved": false
+  },
+  {
+    "id": "newborn-fever-not-feeding",
+    "lang": "hi-IN",
+    "turns": [
+      "Fatima Bano ka baby, ID 1009",
+      "baby ko tez bukhar hai aur doodh bhi nahi pee raha, weight 2 kilo 100 gram"
+    ],
+    "expect": {"beneficiary_id": "1009", "weight_kg": 2.1},
+    "expect_danger": ["NB_FEVER", "NB_NOT_FEEDING"],
+    "expect_saved": false
+  },
+  {
+    "id": "negated-signs-no-flag",
+    "lang": "hi-IN",
+    "turns": [
+      "Rekha Kumari 1002, pehla ANC visit",
+      "koi bleeding nahi, bukhar nahi, sujan bhi nahi hai. Weight 52 kilo, IFA goli 30 di"
+    ],
+    "expect": {"beneficiary_id": "1002", "weight_kg": 52, "ifa_tablets_given": 30},
+    "expect_danger": [],
+    "expect_saved": false
+  },
+  {
+    "id": "high-bp-english",
+    "lang": "en-IN",
+    "turns": [
+      "ANC visit for Meena Kumari, ID 1006",
+      "BP is 150 by 96, weight 61 kilo, she has swelling on her face",
+      "done, please save",
+      "yes correct"
+    ],
+    "expect": {"beneficiary_id": "1006", "bp_systolic": 150, "bp_diastolic": 96, "weight_kg": 61},
+    "expect_danger": ["MAT_HIGH_BP", "MAT_SWELLING"],
+    "expect_saved": true
+  },
+  {
+    "id": "child-immunisation",
+    "lang": "hi-IN",
+    "turns": [
+      "आरव सिंह, दो शून्य शून्य एक, टीकाकरण",
+      "आज penta एक, OPV एक, rota एक, PCV एक और IPV लगा दिया, वज़न चार दशमलव छह किलो",
+      "अगली visit चार हफ़्ते बाद",
+      "बस",
+      "हाँ"
+    ],
+    "expect": {"beneficiary_id": "2001", "visit_type": "Immunisation", "weight_kg": 4.6,
+               "vaccinations_given_today": ["Penta-1", "OPV-1", "RVV-1", "PCV-1", "fIPV-1"], "next_visit_date": "+28"},
+    "expect_danger": [],
+    "expect_saved": true
+  },
+  {
+    "id": "fits-marathi",
+    "lang": "mr-IN",
+    "turns": [
+      "अंजली वर्मा, एक शून्य शून्य पाच",
+      "तिला आज सकाळी झटके आले, आणि डोकं खूप दुखतंय"
+    ],
+    "expect": {"beneficiary_id": "1005"},
+    "expect_danger": ["MAT_CONVULSION", "MAT_HEADACHE_VISION"],
+    "expect_saved": false
+  },
+  {
+    "id": "telugu-fever-pregnant",
+    "lang": "te-IN",
+    "turns": [
+      "లక్ష్మి నాయుడు, ఐడి వన్ జీరో జీరో సెవెన్",
+      "ఆమెకు రెండు రోజులుగా ఎక్కువ జ్వరం ఉంది, బరువు అరవై రెండు కిలోలు"
+    ],
+    "expect": {"beneficiary_id": "1007", "weight_kg": 62},
+    "expect_danger": ["MAT_FEVER"],
+    "expect_saved": false
+  }
+]

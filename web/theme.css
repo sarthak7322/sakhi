@@ -1,0 +1,38 @@
+/* Sakhi design tokens: dark-first, single mint accent (after dsakaro.site), shared by the landing page and the app. */
+:root {
+  --bg: #0b0b0c; --bg2: #111113; --surface: #141416; --surface-2: #1b1b1e; --surface-3: #232327;
+  --ink: #f5f3f0; --ink-2: #b9b5ae; --ink-3: #85817a; --line: rgba(255, 255, 255, .08); --line-2: rgba(255, 255, 255, .14);
+  --brand: #86d9c2; --brand-2: #5fc4a8; --brand-ink: #062a21; --brand-soft: rgba(134, 217, 194, .13);
+  --ok: #86d9c2; --ok-bg: rgba(134, 217, 194, .12); --danger: #f26d82; --danger-solid: #c8193f; --danger-bg: rgba(242, 109, 130, .13);
+  --warn-ink: #e2c27d; --warn-bg: rgba(226, 194, 125, .13); --info: #89b4fa; --info-bg: rgba(137, 180, 250, .13);
+  --accent-2: #cba6f7; --flash: rgba(134, 217, 194, .22);
+  --card-rim: linear-gradient(180deg, rgba(255, 255, 255, .12), rgba(255, 255, 255, .03));
+  --shadow: 0 1px 0 rgba(255, 255, 255, .04) inset, 0 10px 30px rgba(0, 0, 0, .35);
+  --r: 18px; --r-sm: 12px;
+  --ease: cubic-bezier(.16, 1, .3, 1); --dur: .24s;
+  --font: "Geist", "Noto Sans Devanagari", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Inter Tight", "Geist", "Noto Sans Devanagari", system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  color-scheme: dark;
+}
+:root[data-theme="light"] {
+  --bg: #f6f3ec; --bg2: #efebe2; --surface: #ffffff; --surface-2: #f4f1ea; --surface-3: #ebe6dc;
+  --ink: #18181b; --ink-2: #4a4740; --ink-3: #7a756c; --line: rgba(16, 24, 40, .09); --line-2: rgba(16, 24, 40, .16);
+  --brand: #1e8c72; --brand-2: #17775f; --brand-ink: #ffffff; --brand-soft: rgba(30, 140, 114, .1);
+  --ok: #1e8c72; --ok-bg: rgba(30, 140, 114, .1); --danger: #c8193f; --danger-bg: rgba(200, 25, 63, .08);
+  --warn-ink: #8a5a00; --warn-bg: rgba(214, 144, 46, .14); --info: #2b5fb4; --info-bg: rgba(43, 95, 180, .1);
+  --accent-2: #7a4fd0; --flash: rgba(30, 140, 114, .16);
+  --card-rim: linear-gradient(180deg, rgba(16, 24, 40, .1), rgba(16, 24, 40, .04));
+  --shadow: 0 1px 2px rgba(16, 24, 40, .05), 0 8px 24px rgba(16, 24, 40, .06);
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+html, body { margin: 0; background: var(--bg); color: var(--ink); }
+body { font: 16px/1.5 var(--font); -webkit-font-smoothing: antialiased; -webkit-tap-highlight-color: transparent; }
+button, input, select { font: inherit; color: inherit; }
+::selection { background: var(--brand); color: var(--brand-ink); }
+.mono { font-family: var(--font-mono); letter-spacing: .01em; }
+[hidden] { display: none !important; }
+:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; } }

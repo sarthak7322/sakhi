@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="hi" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0b0c">
+  <title>Sakhi · ASHA Voice Register</title>
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="/static/icon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@500;600&family=Inter+Tight:wght@600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="/static/theme.css">
+  <link rel="stylesheet" href="/static/mascot.css">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-visit" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 2v2M5 2v2M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1"/><path d="M8 15a6 6 0 0 0 12 0v-3"/><circle cx="20" cy="10" r="2"/></symbol><symbol id="i-log" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 12h-5M15 8h-5M19 17V5a2 2 0 0 0-2-2H4"/><path d="M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3"/></symbol><symbol id="i-follow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></symbol><symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol><symbol id="i-records" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></symbol><symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></symbol><symbol id="i-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 20 12 6 21 6 3"/></symbol><symbol id="i-keyboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M8 12h.01M12 12h.01M16 12h.01M7 16h10"/></symbol><symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol><symbol id="i-stop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="12" height="12" x="6" y="6" rx="2"/></symbol><symbol id="i-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v3"/></symbol><symbol id="i-micoff" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 2 20 20M18.89 13.23A7 7 0 0 0 19 12v-2M5 10v2a7 7 0 0 0 12 5M15 9.34V5a3 3 0 0 0-5.68-1.33M9 9v3a3 3 0 0 0 5.12 2.12M12 19v3"/></symbol><symbol id="i-theme" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 0 0 20Z" fill="currentColor"/></symbol></svg>
+  <!-- ============================== SETUP ============================== -->
+  <section id="setup" class="setup">
+    <div class="setup-inner">
+      <a class="back-home mono" href="/">← Sakhi home</a>
+      <div id="demoInvite" class="demo-invite" hidden>
+        <b>▶ Demo visit</b><span>Hear Sakhi run a scripted visit with her real voice. No microphone needed.</span>
+        <button id="demoInviteBtn" class="btn primary">▶ Play the demo visit</button>
+      </div>
+      <div class="hero">
+        <div class="hero-mascot m-waving" data-mascot></div>
+        <div>
+          <h1>सखी <span>Sakhi</span></h1>
+          <p class="tagline">बोलिए, रजिस्टर अपने-आप भरेगा · Speak the visit, the register fills itself</p>
+        </div>
+      </div>
+
+      <ul class="feature-row" aria-label="What Sakhi does">
+        <li><span class="fi">🎙️</span>Hands-free dictation</li>
+        <li><span class="fi">🔁</span>Read-back &amp; voice correction</li>
+        <li><span class="fi">🚨</span>Danger sign → PHC referral</li>
+        <li><span class="fi">🗣️</span>10 languages + English mix</li>
+      </ul>
+
+      <h2>भाषा चुनें · Choose language</h2>
+      <div id="langs" class="lang-grid"></div>
+
+      <label class="field">
+        <span>ASHA ID</span>
+        <input id="ashaId" inputmode="text" autocomplete="off" placeholder="ASHA-DEMO">
+      </label>
+
+      <div class="mic-test">
+        <button id="micTestBtn" class="btn small">🎧 Test microphone</button>
+        <div class="meter" aria-hidden="true"><i id="micMeter"></i></div>
+        <span id="micTestMsg" class="muted small">Check that your voice moves the bar</span>
+      </div>
+
+      <button id="startBtn" class="btn primary xl">🎙️ शुरू करें · Start visit</button>
+      <button id="startTypedBtn" class="btn ghost wide">⌨ Start without microphone (typed / demo)</button>
+
+      <div class="notice">
+        <b>AI सहायक · AI assistant.</b> Demo uses <b>synthetic beneficiaries only</b>. Sakhi never diagnoses or
+        suggests medicines: danger signs are only referred to the PHC. Audio is streamed for transcription and is not stored;
+        a text voice log is kept for review.
+      </div>
+      <p id="setupErr" class="err" hidden></p>
+      <p class="stack muted small" id="stackLine">Gnani Prisma v3.0 STT · Timbre v3.0 TTS · streaming WebSockets</p>
+    </div>
+  </section>
+
+  <!-- ============================== APP ============================== -->
+  <div id="app" class="app" hidden>
+    <header class="appbar">
+      <a class="ab-brand" href="/" title="Sakhi home"><img src="/static/icon.svg" alt="" width="30" height="30"><b>Sakhi</b></a>
+      <div id="conn" class="conn off" title="connection"><i></i><span>offline</span></div>
+      <div class="ab-right">
+        <span id="latBadge" class="lat-badge" title="time to first audio after she stops speaking">⏱ — ms</span>
+        <select id="langSwitch" class="lang-switch" aria-label="language" title="Switch language"></select>
+        <button id="helpBtn" class="icon-btn" title="Help and shortcuts (?)">?</button>
+        <button id="muteBtn" class="icon-btn" aria-pressed="false" title="Mute microphone (M)"><svg class="ic"><use href="#i-mic"/></svg></button>
+        <button id="themeBtn" class="icon-btn" title="Light / dark"><svg class="ic"><use href="#i-theme"/></svg></button>
+      </div>
+    </header>
+
+    <nav class="tabs" role="tablist">
+      <button class="tab active" data-view="visit"><svg class="ic"><use href="#i-visit"/></svg> <span data-t="tab_visit">विज़िट</span></button>
+      <button class="tab" data-view="log"><svg class="ic"><use href="#i-log"/></svg> <span data-t="tab_log">वॉइस लॉग</span> <em id="logCount" class="count" hidden></em></button>
+      <button class="tab" data-view="follow"><svg class="ic"><use href="#i-follow"/></svg> <span data-t="tab_follow">फ़ॉलो-अप</span> <em id="fuCount" class="count red" hidden></em></button>
+      <button class="tab" data-view="register"><svg class="ic"><use href="#i-users"/></svg> <span data-t="tab_register">रजिस्टर</span></button>
+      <button class="tab" data-view="records"><svg class="ic"><use href="#i-records"/></svg> <span data-t="tab_records">रिकॉर्ड</span></button>
+    </nav>
+
+    <main class="views">
+      <!-- ---------- VISIT ---------- -->
+      <section id="view-visit" class="view active">
+        <div class="visit-grid">
+          <div class="col-main">
+            <div class="voice-dock" id="dock">
+              <button id="orb" class="orb idle" aria-label="Sakhi — tap to mute or unmute the microphone">
+                <span class="ring r1"></span><span class="ring r2"></span>
+                <div id="mascot" class="orb-mascot" data-mascot></div>
+              </button>
+              <div class="dock-text">
+                <div class="bubble" id="bubble">
+                  <div id="orbState" class="orb-state">—</div>
+                  <div id="bubbleText" class="bubble-text">नमस्ते दीदी…</div>
+                </div>
+                <canvas id="wave" class="wave" height="34" aria-hidden="true"></canvas>
+              </div>
+            </div>
+
+            <div class="captions">
+              <div class="cap you" id="capYou" hidden><span class="who" data-t="you_label">आप · ASHA</span><span id="capYouText"></span></div>
+              <div class="cap sakhi" id="capSakhi" hidden><span class="who">Sakhi</span><span id="capSakhiText"></span></div>
+            </div>
+
+            <ol class="stepper" id="stepper">
+              <li data-s="collecting"><b>1</b><span data-t="step1">बोलिए</span></li>
+              <li data-s="confirming"><b>2</b><span data-t="step2">पढ़कर सुनाया</span></li>
+              <li data-s="saved"><b>3</b><span data-t="step3">सेव</span></li>
+            </ol>
+
+            <div id="dangerBar" class="danger-bar" hidden role="alert"></div>
+
+            <article class="rcard" id="card">
+              <header class="rc-head">
+                <div class="avatar" id="avatar">?</div>
+                <div class="rc-who">
+                  <div id="bName" class="bname">—</div>
+                  <div id="bMeta" class="bmeta"></div>
+                </div>
+                <div class="rc-id"><small>ID</small><b id="bId">—</b></div>
+              </header>
+              <div class="progress" title="required fields"><i id="progBar"></i></div>
+              <div id="fields" class="tiles"></div>
+              <p class="edit-hint muted small">✎ <span data-t="edit_hint">किसी भी खाने पर टैप करके बदलें</span></p>
+              <div id="vacc" class="vacc" hidden></div>
+              <div id="warn" class="warn" hidden></div>
+            </article>
+
+            <div class="tries">
+              <span class="muted small" data-t="try">बोलकर देखिए:</span>
+              <div id="tryChips" class="chips"></div>
+            </div>
+          </div>
+
+          <aside class="col-side">
+            <div class="panel">
+              <div class="panel-head"><h3>⚡ Speech pipeline</h3><span id="sessionId" class="muted small"></span></div>
+              <div class="pipe">
+                <div class="pipe-step" id="pSTT"><i>🎙️</i><b>Prisma STT</b><small id="pSTTv">—</small></div>
+                <div class="pipe-arrow">→</div>
+                <div class="pipe-step" id="pDNG"><i>🚨</i><b>Danger check</b><small>keyword · numbers · LLM</small></div>
+                <div class="pipe-arrow">→</div>
+                <div class="pipe-step" id="pLLM"><i>🧠</i><b>Local model / LLM</b><small id="pLLMv">—</small></div>
+                <div class="pipe-arrow">→</div>
+                <div class="pipe-step" id="pTTS"><i>🔊</i><b>Timbre TTS</b><small id="pTTSv">—</small></div>
+              </div>
+              <div class="kpis">
+                <div><small>first audio (last)</small><b id="kLast">—</b></div>
+                <div><small>median</small><b id="kMed">—</b></div>
+                <div><small>turns</small><b id="kTurns">0</b></div>
+                <div><small>barge-ins</small><b id="kBarge">0</b></div>
+              </div>
+              <div id="sparks" class="sparks" title="first audio per turn (ms)"></div>
+              <div class="saved-calls" id="savedCalls" hidden>⚡ <b id="localN">0</b> of <b id="turnN">0</b> turns understood locally · <b id="callsSaved">0</b> LLM calls saved · 🎓 <b id="learnedN">0</b> phrasings learned</div>
+            </div>
+            <div class="panel log-mini">
+              <div class="panel-head"><h3>🗒️ Live voice log</h3><button class="link" data-goto="log">open ›</button></div>
+              <div id="miniLog" class="log compact"></div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ---------- VOICE LOG ---------- -->
+      <section id="view-log" class="view">
+        <div class="view-head">
+          <h2>🗒️ <span data-t="tab_log">वॉइस लॉग</span></h2>
+          <div class="head-actions">
+            <select id="logPick" aria-label="session"><option value="live">● Live session</option></select>
+            <button id="logExport" class="btn small">⬇ JSON</button>
+          </div>
+        </div>
+        <p class="muted small">Every turn: what she said, what Sakhi heard and did, which fields changed, and how long each stage took.
+          Every session is saved (text only). Press <b>⚑ Report</b> on a turn that went wrong: it is added to the bug report used to fix and train Sakhi.</p>
+        <div class="ds-bar">
+          <div id="dsStats" class="ds-stats"></div>
+          <div class="head-actions">
+            <a class="btn small" href="/api/dataset.jsonl" download>⬇ Dataset (all sessions)</a>
+          </div>
+        </div>
+        <div class="legend">
+          <span><i class="lg stt"></i>STT</span><span><i class="lg llm"></i>LLM first token</span><span><i class="lg tts"></i>to first audio</span>
+        </div>
+        <div id="fullLog" class="log"></div>
+      </section>
+
+      <!-- ---------- FOLLOW-UPS ---------- -->
+      <section id="view-follow" class="view">
+        <div class="view-head"><h2>📋 <span data-t="tab_follow">फ़ॉलो-अप</span></h2>
+          <button id="fuRefresh" class="btn small">↻</button></div>
+        <div id="stats" class="stats"></div>
+        <div id="fuList" class="fu-groups"></div>
+      </section>
+
+      <!-- ---------- REGISTER ---------- -->
+      <section id="view-register" class="view">
+        <div class="view-head"><h2>👥 <span data-t="tab_register">रजिस्टर</span></h2>
+          <input id="regSearch" class="search" placeholder="Search name / ID / village"></div>
+        <p class="muted small">Synthetic demo register. Tap “Start visit” to begin a visit for that beneficiary.</p>
+        <div id="regList" class="reg-list"></div>
+      </section>
+
+      <!-- ---------- RECORDS ---------- -->
+      <section id="view-records" class="view">
+        <div class="view-head"><h2>💾 <span data-t="tab_records">रिकॉर्ड</span></h2>
+          <a class="btn small" href="/api/records.csv" download>⬇ CSV</a></div>
+        <div id="recList" class="rec-list"></div>
+      </section>
+    </main>
+
+    <footer class="controls">
+      <button id="doneBtn" class="btn primary"><i class="dico"><svg class="ic"><use href="#i-stop"/></svg></i><span>बोल दिया</span></button>
+      <button id="newBtn" class="btn" aria-label="new visit"><svg class="ic"><use href="#i-plus"/></svg> <span data-t="new" class="lbl">नई विज़िट</span></button>
+      <button id="demoBtn" class="btn" title="Play a scripted demo visit" aria-label="demo"><svg class="ic"><use href="#i-play"/></svg> <span class="lbl">Demo</span></button>
+      <button id="kbBtn" class="btn icon" aria-label="type instead"><svg class="ic"><use href="#i-keyboard"/></svg></button>
+    </footer>
+    <form id="kbForm" class="kb" hidden>
+      <input id="kbInput" placeholder="टाइप करें / type what she would say" autocomplete="off">
+      <button class="btn primary">भेजें</button>
+    </form>
+  </div>
+
+  <!-- danger overlay -->
+  <div id="alarm" class="alarm" hidden role="alertdialog" aria-labelledby="alarmTitle">
+    <div class="alarm-box">
+      <div class="alarm-icon">🚨</div>
+      <h2 id="alarmTitle">खतरे का संकेत</h2>
+      <p class="alarm-sub">अभी PHC रेफ़र करें · Refer to PHC now</p>
+      <ul id="alarmList"></ul>
+      <p class="alarm-note">Sakhi does not diagnose or advise treatment. Record flagged for referral.</p>
+      <button id="alarmOk" class="btn xl white">समझ गई · Understood</button>
+    </div>
+  </div>
+
+  <!-- demo picker -->
+  <div id="demoSheet" class="sheet" hidden>
+    <div class="sheet-box">
+      <h3>▶ Demo visit</h3>
+      <p class="muted small">Sends a scripted visit as if the ASHA spoke it (Sakhi still answers live, with real voice).</p>
+      <div id="demoList" class="demo-list"></div>
+      <button id="demoClose" class="btn wide">Close</button>
+    </div>
+  </div>
+
+  <!-- field editor -->
+  <div id="editSheet" class="sheet" hidden>
+    <form id="editForm" class="sheet-box">
+      <h3 id="editTitle">Edit</h3>
+      <p id="editHelp" class="muted small"></p>
+      <input id="editInput" class="edit-input" autocomplete="off">
+      <div id="editChips" class="chips"></div>
+      <div class="sheet-actions">
+        <button type="button" id="editCancel" class="btn">Cancel</button>
+        <button type="button" id="editClear" class="btn">Clear</button>
+        <button type="submit" class="btn primary">✓ Save field</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- saved celebration -->
+  <div id="savedSheet" class="sheet" hidden>
+    <div class="sheet-box saved-box">
+      <div class="check-anim"><svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="24"/><path d="M14 27l8 8 16-17"/></svg></div>
+      <h3 id="savedTitle">Record saved</h3>
+      <p id="savedWho" class="muted"></p>
+      <ul id="savedFu" class="saved-fu"></ul>
+      <div class="sheet-actions">
+        <button id="savedLog" class="btn">🗒️ Voice log</button>
+        <button id="savedPdf" class="btn">📄 PDF report</button>
+        <button id="savedNext" class="btn primary">＋ Next visit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- help -->
+  <div id="helpSheet" class="sheet" hidden>
+    <div class="sheet-box">
+      <h3>❓ How to use Sakhi</h3>
+      <ol class="help-steps">
+        <li><b>Say who:</b> “Sunita Devi, ID 1001, ANC visit”</li>
+        <li><b>Say the readings:</b> “वज़न 58 किलो, BP 120 by 80, Hb 10.5”</li>
+        <li><b>Correct by voice:</b> “नहीं, वज़न 56 किलो है”, or tap the field</li>
+        <li><b>Finish:</b> “बस, save करो”. Sakhi reads it all back</li>
+        <li><b>Confirm:</b> “हाँ सही है”. Saved, with follow-ups</li>
+      </ol>
+      <p class="muted small">Danger signs (bleeding, fits, not feeding, fast breathing, high BP…) are referred to the PHC at once. Sakhi never gives medicines or a diagnosis. You can interrupt her at any time.</p>
+      <h4>Keyboard (laptop)</h4>
+      <div class="keys">
+        <span><kbd>Space</kbd> done speaking / yes</span><span><kbd>M</kbd> mute</span><span><kbd>N</kbd> new visit</span>
+        <span><kbd>D</kbd> demo</span><span><kbd>T</kbd> type</span><span><kbd>1</kbd>–<kbd>5</kbd> tabs</span><span><kbd>?</kbd> help</span>
+      </div>
+      <button id="helpClose" class="btn wide">Got it</button>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" hidden></div>
+  <script src="/static/mascot.js"></script>
+  <script src="/static/app.js"></script>
+</body>
+</html>
